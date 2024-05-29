@@ -27,29 +27,29 @@ const Order = ({
     <View style={styles.card} id={order.id}>
       <View style={styles.infoContainer}>
         <Text style={styles.header}>Order ID:</Text>
-        <Text style={styles.body}>{order.id}</Text>
-        <Text style={styles.header}>Picker:</Text>
+        <Text style={styles.body}>{order.orderId}</Text>
+        <Text style={styles.header}>Deliverer:</Text>
         <Text style={styles.body}>
-          {order.picker.name} {order.picker.surname}
+          {order.deliverer.name} {order.deliverer.surname}
         </Text>
       </View>
       <View style={styles.buttonContainer}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => updateOrderStatus(order.id, "PENDING")}
+            onPress={() => updateOrderStatus(order.orderId, "PENDING")}
           >
             {renderIcon("PENDING")}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => updateOrderStatus(order.id, "IN_PROGRESS")}
+            onPress={() => updateOrderStatus(order.orderId, "IN_PROGRESS")}
           >
             {renderIcon("IN_PROGRESS")}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => updateOrderStatus(order.id, "COMPLETED")}
+            onPress={() => updateOrderStatus(order.orderId, "COMPLETED")}
           >
             {renderIcon("COMPLETED")}
           </TouchableOpacity>

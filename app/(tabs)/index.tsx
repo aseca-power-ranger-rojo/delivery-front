@@ -16,7 +16,7 @@ const HomeScreen = () => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
-    getOrders()
+    getOrders().then((response) => setOrders(response.data));
   }, []);
 
   const updateOrderStatus = (orderId: string, newStatus: string) => {
