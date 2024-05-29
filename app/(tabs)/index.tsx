@@ -9,7 +9,7 @@ type Order = {
   picker: {
     name: string;
     surname: string;
-  }
+  };
 };
 
 const HomeScreen = () => {
@@ -22,8 +22,8 @@ const HomeScreen = () => {
   const updateOrderStatus = (orderId: string, newStatus: string) => {
     orderStatus(orderId, newStatus).then(() => {
       setOrders(
-        orders.map((order) =>
-          order.id === orderId ? { ...order, status: newStatus } : order
+        orders.map((order: any) =>
+          order.orderId === orderId ? { ...order, status: newStatus } : order
         )
       );
     });
