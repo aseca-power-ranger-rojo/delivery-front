@@ -26,6 +26,8 @@ const HomeScreen = () => {
           order.orderId === orderId ? { ...order, status: newStatus } : order
         )
       );
+    }).catch((e:any) => {
+      alert(e.message);
     });
   };
 
